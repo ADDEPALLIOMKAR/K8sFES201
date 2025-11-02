@@ -14,7 +14,8 @@ const Signup = () => {
       alert("Signup successful! Please login.");
       navigate("/login");
     } catch (error) {
-      alert("Signup failed!");
+      const errorMessage = error.response?.data || "Signup failed! User may already exist.";
+      alert(errorMessage);
     }
   };
 
